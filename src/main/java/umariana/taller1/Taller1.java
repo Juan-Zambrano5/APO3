@@ -4,10 +4,9 @@ package umariana.taller1;
 import Mundo.Tarea;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 /**
  *
- * @author
+ * @author Juan Zambrano
  */
 public class Taller1 {
 
@@ -23,7 +22,7 @@ public class Taller1 {
             System.out.println("======= Menu de opciones ======");
             System.out.println("1. Agregar tarea");
             System.out.println("2. Mostrar tarea");
-            System.out.println("3. Terminar programa");
+            System.out.println("3. Prioridad de tareas");
             System.out.println("Seleccione una opcion");
             System.out.println("===============================");
             
@@ -55,6 +54,26 @@ public class Taller1 {
                     }
                     break;
                 case 3:
+                    int n = misTareas.size();
+                    for (int i = 0; i < n - 1; i++) {
+                        for (int j = 0; j < n - i - 1; j++) {
+                            if (misTareas.get(j).getPrioridad() < misTareas.get(j + 1).getPrioridad()) {
+                            Tarea temp = misTareas.get(j);
+                            misTareas.set(j, misTareas.get(j + 1));
+                            misTareas.set(j + 1, temp);
+                }
+            }
+        }
+                    System.out.println("Tareas ordenadas por prioridad");
+                    for (Tarea t: misTareas){
+                        System.out.println("id: " +t.getIdTarea());
+                        System.out.println("descripcion: " +t.getDescripcion());
+                        System.out.println("prioridad: " +t.getPrioridad());
+                        System.out.println("===============");
+                    }
+                    break;
+                    
+                case 4:
                     activo = false;
                     System.out.println("opcion 1");
                     break;
@@ -64,5 +83,5 @@ public class Taller1 {
             }
         }
         while(activo);
-    }
+}
 }
