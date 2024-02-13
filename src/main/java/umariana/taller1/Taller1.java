@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class Taller1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
         
         Scanner lector = new Scanner (System.in);
         ArrayList<Tarea> misTareas=new ArrayList<>();
